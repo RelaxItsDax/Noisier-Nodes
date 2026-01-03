@@ -1,0 +1,19 @@
+#pragma kernel CSMain
+
+#include "../HLSL/ClassicNoise3D.hlsl"
+
+RWTexture3D<float4> result;
+float3 size;
+float4 offset;
+float scale;
+float cellDensity;
+float angleOffset;
+
+[numthreads(8,8,8)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float maxSize = max(size.x, max(size.y, size.z));
+    float noise = cnoise(id.xyz * scale / maxSize + offset.xyz);
+
+    result[id.xyz] = 1.15 + (noise + 1.15) / -2.3; //Remap
+}

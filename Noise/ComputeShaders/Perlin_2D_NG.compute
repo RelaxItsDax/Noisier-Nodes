@@ -1,0 +1,15 @@
+#pragma kernel CSMain
+
+#include "../HLSL/ClassicNoise2D.hlsl"
+
+RWTexture2D<float4> result;
+float3 size;
+float4 offset;
+float scale;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float maxSize = max(size.x, max(size.y, size.z));
+    result[id.xy] = Remap(-1, 1, 0, 1, cnoise(id.xy * scale / maxSize + offset.xy));
+}

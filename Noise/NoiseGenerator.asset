@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eb2bf23f37ede4ead8f7fad10dbb9e, type: 3}
+  m_Name: NoiseGenerator
+  m_EditorClassIdentifier: Assembly-CSharp::Shaders.Noise.NoiseGeneratorSO
+  noiseGenerators:
+  - type: 0
+    shader: {fileID: 7200000, guid: 8b93286c18cf3864d8e41fd68677ff22, type: 3}
+  - type: 1
+    shader: {fileID: 7200000, guid: d367c220cbf3975488a0107bbfd49551, type: 3}
+  - type: 2
+    shader: {fileID: 7200000, guid: 38404ae018e4902439eb9f5d1bc2272f, type: 3}
+  - type: 3
+    shader: {fileID: 7200000, guid: 7e1b813b68d3c1b418f6a23c8d89d599, type: 3}
+  - type: 4
+    shader: {fileID: 7200000, guid: cebb159df7c54aa194de7ee7d3d12ff8, type: 3}
+  - type: 5
+    shader: {fileID: 7200000, guid: b777d97add3344daab99311e53c35c8d, type: 3}
+  - type: 6
+    shader: {fileID: 7200000, guid: 4f2a502f97924e6fab24b652169e3ddf, type: 3}
+  - type: 7
+    shader: {fileID: 7200000, guid: 0ad770737254a24489e99d0d7bd65e71, type: 3}
+  - type: 8
+    shader: {fileID: 7200000, guid: 0a57fc4143c025c45b963250bb27d98c, type: 3}
+  - type: 9
+    shader: {fileID: 7200000, guid: ac6c6570ad632eb46a0af6f0bb63290f, type: 3}
+  - type: 10
+    shader: {fileID: 7200000, guid: 7bfb32db54124e219aad3eaa479897d8, type: 3}
+  - type: 11
+    shader: {fileID: 7200000, guid: c3825142c6e741ea96948de5b969b50b, type: 3}
+  - type: 12
+    shader: {fileID: 7200000, guid: b323c1a548511b84b876618382df68b2, type: 3}
+  - type: 13
+    shader: {fileID: 7200000, guid: e523254be7da47b48a85f116d8c286a4, type: 3}
+  type: 1
+  fileName: NoiseGeneratorOutput
+  height: 64
+  width: 64
+  depth: 64
+  encodeToPng: 0
+  seed: jahsvdjh
+  scale: 5
+  cellDensity: 10
+  angleOffset: 20
+  outputTexture: {fileID: 11700000, guid: bfe5b99d574ef5649bd3bb179aa5af16, type: 2}

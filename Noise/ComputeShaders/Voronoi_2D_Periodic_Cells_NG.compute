@@ -1,0 +1,20 @@
+#pragma kernel CSMain
+
+#include "../HLSL/Voronoi2D.hlsl"
+
+RWTexture2D<float4> result;
+float3 size;
+float4 offset;
+float scale;
+float cellDensity;
+float angleOffset;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float valueOut = 0;
+    float cellsOut = 0;
+    float maxSize = max(size.x, max(size.y, size.z));
+    Voronoi2D_Periodic_float(id.xy / maxSize + offset.xy, angleOffset, cellDensity, valueOut, cellsOut);
+    result[id.xy] = cellsOut;
+}

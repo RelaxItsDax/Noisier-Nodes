@@ -1,0 +1,20 @@
+#pragma kernel CSMain
+
+#include "../HLSL/SimplexNoise2D.hlsl"
+
+RWTexture2D<float4> result;
+float3 size;
+float4 offset;
+float scale;
+
+[numthreads(8,8,1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    float maxSize = max(size.x, max(size.y, size.z));
+    float3 grad = snoise_grad(id.xy * scale / maxSize + offset.xy);
+    float4 remapped = float4(
+        Remap(-6.3, 6.3, 0, 1, grad.x), 
+        Remap(-6.3, 6.3, 0, 1, grad.y),
+        Remap(-6.3, 6.3, 0, 1, grad.z), 1.0);
+    result[id.xy] = remapped;
+}
