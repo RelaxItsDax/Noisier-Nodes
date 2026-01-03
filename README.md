@@ -36,7 +36,7 @@ Output Settings:
 - Depth: The depth of the sample. Only used for 3D noise.
 - Encode to PNG: Wether the generator should output a Texture2D asset file or a PNG. Only works for 2D noise.
 - Seed: The seed to use in generation.
-Regular Inputs: (Used for Perlin and Simplex)
+Perlin/Simplex Inputs: (Used for Perlin and Simplex)
 - Scale: The noise scale.
 Voronoi Inputs:
 - Cell Density: The cell density.
