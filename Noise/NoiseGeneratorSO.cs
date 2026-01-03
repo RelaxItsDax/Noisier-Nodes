@@ -42,11 +42,11 @@ namespace Noise {
         public int width;
         public int depth = 1;
         public bool encodeToPng;
-
+        public string seed;
+        
         private readonly float randomBounds = 1000;
 
-        [Header("Regular Inputs")] 
-        public string seed;
+        [Header("Perlin/Simplex Inputs")] 
         public float scale;
         [Header("Voronoi Inputs")]
         public float cellDensity;
