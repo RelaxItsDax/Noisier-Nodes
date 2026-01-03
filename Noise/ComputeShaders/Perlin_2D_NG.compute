@@ -11,5 +11,5 @@ float scale;
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
     float maxSize = max(size.x, max(size.y, size.z));
-    result[id.xy] = Remap(-1, 1, 0, 1, cnoise(id.xy * scale / maxSize + offset.xy));
+    result[id.xy] = RemapVal(-1, 1, 0, 1, cnoise(id.xy * scale / maxSize + offset.xy));
 }

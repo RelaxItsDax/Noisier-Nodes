@@ -1,7 +1,7 @@
 #ifndef _INCLUDE_NOISEUTILS_
 #define _INCLUDE_NOISEUTILS_
 
-float Remap(float origFrom, float origTo, float targetFrom, float targetTo, float value)
+float RemapVal(float origFrom, float origTo, float targetFrom, float targetTo, float value)
 {
     return lerp(targetFrom, targetTo, (value - origFrom) / (origTo - origFrom));
 }

@@ -13,8 +13,8 @@ void CSMain(uint3 id : SV_DispatchThreadID)
     float maxSize = max(size.x, max(size.y, size.z));
     float3 grad = snoise_grad(id.xy * scale / maxSize + offset.xy);
     float4 remapped = float4(
-        Remap(-6.3, 6.3, 0, 1, grad.x), 
-        Remap(-6.3, 6.3, 0, 1, grad.y),
-        Remap(-6.3, 6.3, 0, 1, grad.z), 1.0);
+        RemapVal(-6.3, 6.3, 0, 1, grad.x), 
+        RemapVal(-6.3, 6.3, 0, 1, grad.y),
+        RemapVal(-6.3, 6.3, 0, 1, grad.z), 1.0);
     result[id.xy] = remapped;
 }
